@@ -26,10 +26,9 @@ export class DashboardComponent implements OnInit {
     // Using absolute URLs for HTTP - https://angular.io/guide/universal#using-absolute-urls-for-server-requests
     this.http.get('/assets/text.txt', {
       responseType: 'text'
-    })
-      .subscribe(response => {
-        console.log(response);
-        this.message = response;
-      })
+    }).subscribe(response => {
+      console.log(response);
+      this.message = response;
+    });
   }
 }
