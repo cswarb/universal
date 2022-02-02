@@ -3,17 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-import { Hero } from './hero';
+import { Model } from './model';
 
 
 @Injectable({ providedIn: 'root' })
-export class HeroService {
-  private heroesUrl = '/api/heroes';
+export class Service {
+  private url = '/api/heroes';
 
   constructor(private http: HttpClient) { }
 
-  getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
+  getData(): Observable<Model[]> {
+    return this.http.get<Model[]>(this.url)
       .pipe(
         tap(_ => console.log('fetching')),
         catchError((err) => {

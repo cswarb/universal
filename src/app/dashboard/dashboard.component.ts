@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Model } from '../model';
+import { Service } from '../my.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,15 +10,15 @@ import { HeroService } from '../hero.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  heroes$!: Observable<Hero[]>;
+  data$!: Observable<Model[]>;
   message!: any;
 
-  constructor(private heroService: HeroService, private http: HttpClient) { }
+  constructor(private service: Service, private http: HttpClient) { }
 
   ngOnInit() {
     //docker thing
     //https://stackoverflow.com/questions/50830418/angular-universal-does-not-render-data-from-api-requests
-    this.heroes$ = this.heroService.getHeroes();
+    this.data$ = this.service.getData();
 
     //Need absolute urls to satisfy ssr
     // https://stackoverflow.com/questions/61450145/how-to-resolve-error-networkerror-at-xmlhttprequest-send-dist-fxcore-server

@@ -1,8 +1,8 @@
-<h3>Top Heroes</h3>
+<h3>Universal test</h3>
 
 <div class="grid">
-  <div *ngFor="let hero of heroes$ | async" class="col-1-4">
-    <h4>{{hero | json}}</h4>
+  <div *ngFor="let item of data$ | async" class="col-1-4">
+    <h4>{{item | json}}</h4>
   </div>
 </div>
 
