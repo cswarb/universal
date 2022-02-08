@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Model } from '../model';
 import { Service } from '../my.service';
+import { RequestService } from '../request/request.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,7 @@ export class DashboardComponent implements OnInit {
   data$!: Observable<Model[]>;
   message!: any;
 
-  constructor(private service: Service, private http: HttpClient) { }
+  constructor(private service: Service, private http: HttpClient, private r: RequestService) { }
 
   ngOnInit() {
     //docker thing

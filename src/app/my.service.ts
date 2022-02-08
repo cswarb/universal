@@ -8,7 +8,7 @@ import { Model } from './model';
 
 @Injectable({ providedIn: 'root' })
 export class Service {
-  private url = '/api/heroes';
+  private url = '/api/things';
 
   constructor(private http: HttpClient) { }
 

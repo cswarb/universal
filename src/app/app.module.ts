@@ -8,12 +8,12 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-
+import { APP_BASE_HREF, isPlatformBrowser } from '@angular/common';
+import { RequestService } from './request/request.service';
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({ appId: 'tour-of-heroes' }),
+    BrowserModule.withServerTransition({ appId: 'portal' }),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -21,6 +21,10 @@ import { isPlatformBrowser } from '@angular/common';
   declarations: [
     AppComponent,
     DashboardComponent,
+  ],
+  providers: [
+    RequestService,
+    { provide: APP_BASE_HREF, useValue: '' },
   ],
   bootstrap: [ AppComponent ]
 })

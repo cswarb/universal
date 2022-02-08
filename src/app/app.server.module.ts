@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UniversalInterceptor } from './path.server.service';
 
+//main server module
 @NgModule({
   imports: [
     AppModule,

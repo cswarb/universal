@@ -6,8 +6,9 @@ const port = 3000;
 
 app.use(cors());
 
-app.get('/api/heroes', (req, res) => {
-    return res.json([{ name: 'James', id: '1' }, { name: 'David', id: '2' } ])
+app.get('/api/things', (req, res) => {
+  console.log('hit: /api/things');
+  return res.json([{ name: '1', id: '1' }, { name: '2', id: '2' } ])
 })
 
 app.listen(port, () => {
