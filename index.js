@@ -8,7 +8,7 @@ app.use(cors());
 
 app.get('/api/things', (req, res) => {
   console.log('hit: /api/things');
-  return res.json([{ name: '1', id: '1' }, { name: '2', id: '2' } ])
+  return res.json([{ name: 'test', id: '1' }, { name: 'again', id: '2' } ])
 })
 
 app.listen(port, () => {

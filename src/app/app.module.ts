@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { RequestService } from './request/request.service';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserTransferStateModule
   ],
   declarations: [
     AppComponent,

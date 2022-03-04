@@ -1,5 +1,7 @@
 <h3>Universal test</h3>
 
+<button type="button" (click)="doSomething()">Hello world</button>
+
 <div class="grid">
   <div *ngFor="let item of data$ | async" class="col-1-4">
     <h4>{{item | json}}</h4>
